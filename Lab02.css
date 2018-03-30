@@ -1,0 +1,142 @@
+/* reset browser styles */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+/* end reset browser styles */
+
+body {
+    font-family: "Times New Roman", sans-serif, serif;
+    background-color: #E8EAF6;
+    min-width: 660px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+header,footer {
+    background-color: #1A237E;
+    padding-left: 1em;
+}
+
+header {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+h1,h2,h3 {
+    color: white;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: #3F51B5;
+    padding: 0.3em 0 0.3em 0.7em;
+}
+
+a {
+    color: #00B0FF;
+}
+
+nav a {
+    padding: 0.3em;
+}
+
+nav a:hover {
+    background-color: #F50057;
+    color: white;
+}
+
+.main {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    background-color: white;
+}
+
+.main>section {
+    border: solid thin #C5CAE9;
+    margin-bottom: 0.5em;
+}
+
+.main>section:last-child {
+    margin-bottom: 0;
+}
+
+.main>section h2 {
+    padding: 1em;
+    background-color: #7986CB;
+}
+
+#ny-cp {
+    width: 100%;
+    height: 100%;
+}
+
+figcaption,.content>p {
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+.content>p img {
+    margin: 0;
+}
+
+.photo figcaption {
+    background-color: #C5CAE9;
+    color: #7990A3;
+}
+
+img,.clear {
+    padding: 0;
+    margin-bottom: -0.3em;
+}
+
+.description a {
+    font-weight: bold;
+}
+
+.option {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.comment {
+    margin-top: 0.5em;
+}
+
+div.comment {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-bottom: 0.5em;
+}
+
+.reviews h4 {
+    color: #C5CAE9;
+    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+[datatype="date"] {
+    color: #F5A2C1;
+}
+
+footer {
+    padding-top: 1.3em;
+    padding-bottom: 1.3em;
+    color: white;
+}
+
+#copyright {
+    padding-top: 0.6em;
+}
