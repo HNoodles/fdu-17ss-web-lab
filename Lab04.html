@@ -13,10 +13,137 @@
 </header>
 <main>
    <section>
-   
+        <form method="post" action="http://www.randyconnolly.com/tests/process.php">
+            <fieldset>
+                <legend>photo details</legend>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <p>
+                                <label>
+                                    Title<br/>
+                                    <input type="text" id="title" name="title" placeholder="Give your photo a descriptive name">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Description<br/>
+                                    <textarea id="description" name="description" rows="5" placeholder="Adding a rich description will help with search results"></textarea>
+                                </label>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <label>
+                                    Continent<br/>
+                                    <select id="continent" name="continent">
+                                        <option>Choose continent</option>
+                                        <option>Asia</option>
+                                        <option>Europe</option>
+                                        <option>Africa</option>
+                                        <option>North America</option>
+                                        <option>South America</option>
+                                        <option>Oceania</option>
+                                    </select>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Country<br/>
+                                    <select id="country" name="country">
+                                        <option>Choose country</option>
+                                        <option>China</option>
+                                        <option>America</option>
+                                    </select>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    City<br/>
+                                    <input type="text" id="city" name="city">
+                                </label>
+                            </p>
+                        </td>
+                        <td>
+                            <p class="box">
+                                <label>
+                                    Copyright?<br/>
+                                    <input type="radio" name="copyright" value="All rights reserved"> All rights reserved<br/>
+                                    <input type="radio" name="copyright" value="Creative Commons" checked> Creative Commons<br/>
+                                </label>
+                            </p>
+                            <p class="box">
+                                <label>
+                                    Creative Commons Types<br/>
+                                    <input type="checkbox" name="creative commons types" value="Attribution"> Attribution<br/>
+                                    <input type="checkbox" name="creative commons types" value="Noncommercial"> Noncommercial<br/>
+                                    <input type="checkbox" name="creative commons types" value="No Derivative Works"> No Derivative Works<br/>
+                                </label>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="rectangle">
+                                <label>
+                                    I accept the software license
+                                    <input type="checkbox" name="software license" value="i accept">
+                                </label>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                <label>
+                                    Rate this photo: <br/>
+                                    <input type="number" id="rate" name="number">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Color Collection: <br/>
+                                    <input type="color" id="color" name="color">
+                                </label>
+                            </p>
+                        </td>
+                        <td>
+                            <div class="box">
+                                <p>
+                                    <label>
+                                        Date Taken: <br/>
+                                        <input type="date" id="date" name="date">
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        Time taken: <br/>
+                                        <input type="time" id="time" name="time">
+                                    </label>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="rectangle">
+                                <label>
+                                    <input type="submit" id="submit" class="rounded" name="submit" value="提交">
+                                </label>
+                                <label>
+                                    <input type="reset" id="reset" class="rounded" name="reset" value="Clear Form">
+                                </label>
+                            </p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </form>
    </section>
-</main>  
-
-
+</main>
 </body>
 </html>
