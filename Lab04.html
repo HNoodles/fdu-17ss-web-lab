@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head >
+<head>
    <meta charset="utf-8">
-   <title>Lab 04</title>
-   <link rel="stylesheet" href="./css/reset.css" />
-   <link rel="stylesheet" href="./css/Lab04.css" />
+   <title>Upload</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="./css/reset.css" />-->
+   <!--<link rel="stylesheet" href="./css/Lab04.css" />-->
 </head>
-<body>
-<header>
-     <h1>Share Your Travels</h1>
-     <p>let us know where you've been</p>
-</header>
-<main>
+<body class="container">
+<div class="row">
+    <header class="col-sm-4">
+        <h1 class="text-center">Share Your Travels</h1>
+        <h6 class="text-center"><i>Let us know where you've been</i></h6>
+    </header>
+    <div class="col-sm-8 navbar navbar-expand-sm navbar-light justify-content-around">
+        <nav class="navbar-nav w-75 text-center justify-content-around">
+            <a class="nav-item nav-link" href="Lab02.html">Gallery</a>
+            <a class="nav-item nav-link" href="#">Feeling Lucky</a>
+            <a class="nav-item nav-link" href="#">User</a>
+        </nav>
+    </div>
+</div>
+<main class="border p-3">
    <section>
         <form method="post" action="http://www.randyconnolly.com/tests/process.php">
             <fieldset>
-                <legend>photo details</legend>
-                <table>
+                <legend>Photo Details</legend>
+                <table class="w-100">
                     <tbody>
                     <tr>
                         <td colspan="2">
-                            <p>
-                                <label>
-                                    Title<br/>
-                                    <input type="text" id="title" name="title" placeholder="Give your photo a descriptive name">
+                            <div class="form-group">
+                                <h6>Title</h6>
+                                <label class="w-100">
+                                    <input type="text" id="title" class="form-control" name="title" placeholder="Give your photo a descriptive name">
                                 </label>
-                            </p>
-                            <p>
-                                <label>
-                                    Description<br/>
-                                    <textarea id="description" name="description" rows="5" placeholder="Adding a rich description will help with search results"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <h6>Description</h6>
+                                <label class="w-100">
+                                    <textarea id="description" class="form-control" name="description" rows="2" placeholder="Adding a rich description will help with search results"></textarea>
                                 </label>
-                            </p>
+                            </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <p>
-                                <label>
-                                    Continent<br/>
-                                    <select id="continent" name="continent">
+                        <td colspan="2">
+                            <div class="form-group">
+                                <h6>Continent</h6>
+                                <label class="w-100">
+                                    <select id="continent" class="custom-select" name="continent">
                                         <option>Choose continent</option>
                                         <option>Asia</option>
                                         <option>Europe</option>
@@ -49,94 +59,97 @@
                                         <option>Oceania</option>
                                     </select>
                                 </label>
-                            </p>
-                            <p>
-                                <label>
-                                    Country<br/>
-                                    <select id="country" name="country">
+                            </div>
+                            <div class="form-group">
+                                <h6>Country</h6>
+                                <label class="w-100">
+                                    <select id="country" class="custom-select" name="country">
                                         <option>Choose country</option>
                                         <option>China</option>
                                         <option>America</option>
                                     </select>
                                 </label>
-                            </p>
-                            <p>
-                                <label>
-                                    City<br/>
-                                    <input type="text" id="city" name="city">
+                            </div>
+                            <div class="form-group">
+                                <h6>City</h6>
+                                <label class="w-100">
+                                    <input type="text" id="city" class="form-control" name="city">
                                 </label>
-                            </p>
-                        </td>
-                        <td>
-                            <p class="box">
-                                <label>
-                                    Copyright?<br/>
-                                    <input type="radio" name="copyright" value="All rights reserved"> All rights reserved<br/>
-                                    <input type="radio" name="copyright" value="Creative Commons" checked> Creative Commons<br/>
-                                </label>
-                            </p>
-                            <p class="box">
-                                <label>
-                                    Creative Commons Types<br/>
-                                    <input type="checkbox" name="creative commons types" value="Attribution"> Attribution<br/>
-                                    <input type="checkbox" name="creative commons types" value="Noncommercial"> Noncommercial<br/>
-                                    <input type="checkbox" name="creative commons types" value="No Derivative Works"> No Derivative Works<br/>
-                                </label>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <p class="rectangle">
-                                <label>
-                                    I accept the software license
-                                    <input type="checkbox" name="software license" value="i accept">
-                                </label>
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>
-                                <label>
-                                    Rate this photo: <br/>
-                                    <input type="number" id="rate" name="number">
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    Color Collection: <br/>
-                                    <input type="color" id="color" name="color">
-                                </label>
-                            </p>
-                        </td>
-                        <td>
-                            <div class="box">
-                                <p>
-                                    <label>
-                                        Date Taken: <br/>
-                                        <input type="date" id="date" name="date">
-                                    </label>
-                                </p>
-                                <p>
-                                    <label>
-                                        Time taken: <br/>
-                                        <input type="time" id="time" name="time">
-                                    </label>
-                                </p>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <p class="rectangle">
-                                <label>
-                                    <input type="submit" id="submit" class="rounded" name="submit" value="提交">
+                            <h6>Copyright?</h6>
+                            <div class="form-group form-check">
+                                <label class="w-100">
+                                    <input type="radio" class="form-check-input" name="copyright" value="All rights reserved"> All rights reserved<br/>
+                                    <input type="radio" class="form-check-input" name="copyright" value="Creative Commons" checked> Creative Commons<br/>
                                 </label>
-                                <label>
-                                    <input type="reset" id="reset" class="rounded" name="reset" value="Clear Form">
-                                </label>
-                            </p>
+                            </div>
+                            <h6>Creative Commons Types</h6>
+                            <div class="form-group form-check form-check-inline">
+                                <input type="checkbox" id="inlinecheckbox1" class="form-check-input" name="creative commons types" value="Attribution">
+                                <label class="form-check-label mx-1" for="inlinecheckbox1">Attribution</label>
+                                <input type="checkbox" id="inlinecheckbox2" class="form-check-input" name="creative commons types" value="Noncommercial">
+                                <label class="form-check-label mx-1" for="inlinecheckbox2">Noncommercial</label>
+                                <input type="checkbox" id="inlinecheckbox3" class="form-check-input" name="creative commons types" value="No Derivative Works">
+                                <label class="form-check-label mx-1" for="inlinecheckbox3">No Derivative Works</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group form-check">
+                                <input type="checkbox" id="checkiaccept" class="form-check-input" name="software license" value="i accept">
+                                <label class="form-check-label" for="checkiaccept">I accept the software license</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group form-row">
+                                <div class="col-sm-4">
+                                    <h6>Rate this photo:</h6>
+                                    <label class="w-100">
+                                        <input type="number" id="rate" class="form-control" name="number">
+                                    </label>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-6">
+                                    <h6>Color Collection:</h6>
+                                    <label class="w-100">
+                                        <input type="color" id="color" class="form-control" name="color">
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group form-row">
+                                <div class="col-sm-6">
+                                    <h6>Date Taken:</h6>
+                                    <label class="w-100">
+                                        <input type="date" id="date" class="form-control" name="date">
+                                    </label>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <h6>Time taken:</h6>
+                                    <label class="w-100">
+                                        <input type="time" id="time" class="form-control" name="time">
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group btn-group">
+                                <input type="submit" id="submit" class="btn btn-secondary" name="submit" value="Submit">
+                                <input type="reset" id="reset" class="btn btn-secondary" name="reset" value="Clear">
+                            </div>
                         </td>
                     </tr>
                     </tbody>
@@ -145,5 +158,8 @@
         </form>
    </section>
 </main>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
