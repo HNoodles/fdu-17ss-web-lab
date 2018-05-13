@@ -1,0 +1,33 @@
+.center {
+    margin: 0.5em auto;
+    text-align: center;
+}
+
+form div {
+    margin: 0.5em;
+}
+
+form select,form input#commit {
+    width: 300px;
+}
+
+input#commit {
+    display: block;
+}
+
+table {
+    border: 0;
+}
+
+th {
+    background-color: grey;
+    color: whitesmoke;
+}
+
+td {
+    padding: 0 0.5em;
+}
+
+table tr:nth-child(odd) {
+    background-color: lightgrey;
+}
