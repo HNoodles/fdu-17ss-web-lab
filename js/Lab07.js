@@ -169,7 +169,7 @@ function showAddRow() {
 
                 inputRowAttribute.id = "inputRowAttribute" + i;
                 inputRowAttribute.type = "text";
-                inputRowAttribute.placeholder = "Attr" + i;
+                inputRowAttribute.placeholder = table.getThs()[i - 1];
 
                 divAddRow.appendChild(inputRowAttribute);
             }
@@ -209,7 +209,7 @@ function showDeleteRow() {
 
                 inputDeleteRowAttribute.id = "inputDeleteRowAttribute" + i;
                 inputDeleteRowAttribute.type = "text";
-                inputDeleteRowAttribute.placeholder = "Attr" + i;
+                inputDeleteRowAttribute.placeholder = table.getThs()[i - 1];
 
                 divDeleteRow.appendChild(inputDeleteRowAttribute);
             }
