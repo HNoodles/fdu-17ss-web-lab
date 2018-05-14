@@ -9,10 +9,44 @@ const select2 = document.getElementById("select2");
 
 let tables = Array();
 
-select1.onchange = function () {
+class Table {
+    constructor (name,columnsNumbers,ths) {
+        this.name = name;
+        this.columnsNumbers = columnsNumbers;
+        this.ths = ths;
+        this.trs = Array();
+    }
+    getName () {
+        return this.name;
+    }
+    getColumnsNumbers () {
+        return this.columnsNumbers;
+    }
+    getThs () {
+        return this.ths;
+    }
+    getTrs () {
+        return this.trs;
+    }
+}
+
+select1.onchange = selectorHandler;
+select2.onchange = selectorHandler;
+
+function selectorHandler() {
+    let indexSelect2 = select2.selectedIndex;
+    let text2 = select2.options[indexSelect2].text;
     let indexSelect1 = select1.selectedIndex;
     let text1 = select1.options[indexSelect1].text;
 
+    switch (text2) {
+        case "SELECT (default: last created)":
+            divTable.innerText = "";
+            break;
+        default:
+            drawTable();
+            break;
+    }
     switch (text1) {
         case "SELECT ONE":
             clearAll();
@@ -34,22 +68,7 @@ select1.onchange = function () {
             showDeleteTable();
             break;
     }
-};
-
-select2.onchange = function () {
-    let indexSelect2 = select2.selectedIndex;
-    let text2 = select2.options[indexSelect2].text;
-
-    switch (text2) {
-        case "SELECT (default: last created)":
-            divTable.innerText = "";
-            break;
-        default:
-            drawTable();
-            break;
-    }
-};
-
+}
 
 function clearAll() {
     divCreateTable.innerText = "";
@@ -85,37 +104,10 @@ function showCreateTable() {
     divCreateTable.appendChild(inputTableName);
     divCreateTable.appendChild(inputColumnsNumbers);
 
-    inputTableName.onchange = function () {
-        divAttribute.innerText = "";
-        if (inputColumnsNumbers.value > 0 && (document.getElementById("inputTableName").value !== "")) {
-            showAttribute(inputColumnsNumbers.value);
-            let commit = createCommit();
-            commit.onclick = function () {
-                let name = document.getElementById("inputTableName").value;
-                let columnsNumbers = document.getElementById("inputColumnsNumbers").value;
+    inputTableName.onchange = createTableHandler;
+    inputColumnsNumbers.onchange = createTableHandler;
 
-                let isValid = true;
-                for (let i = 1; i <= columnsNumbers; i++) {
-                    if (document.getElementById("inputAttribute" + i).value === "")
-                        isValid = false;
-                }
-                if (isValid) {
-                    let ths = Array();
-                    for (let i = 1; i <= columnsNumbers; i++) {
-                        ths.push(document.getElementById("inputAttribute" + i).value);
-                    }
-
-                    let table = new Table(name,columnsNumbers,ths);
-                    tables.push(table);
-
-                    createTable(table);
-                }
-            };
-            divAttribute.appendChild(commit);
-        }
-    }
-
-    inputColumnsNumbers.onchange = function () {
+    function createTableHandler() {
         divAttribute.innerText = "";
         if (inputColumnsNumbers.value > 0 && (document.getElementById("inputTableName").value !== "")) {
             showAttribute(inputColumnsNumbers.value);
@@ -145,6 +137,8 @@ function showCreateTable() {
         }
     }
 }
+
+
 
 function showAttribute(number) {
     for (let i = 1; i <= number; i++) {
@@ -193,7 +187,6 @@ function drawTableTh(table) {
         newRow.appendChild(th);
     }
 
-    // newTable.id = "table" + table.getName;
     newTable.className = "center";
 
     divTable.appendChild(newTable);
@@ -297,25 +290,4 @@ function showDeleteTable() {
         drawTable();
     };
     divDeleteTable.appendChild(commit);
-}
-
-class Table {
-    constructor (name,columnsNumbers,ths) {
-        this.name = name;
-        this.columnsNumbers = columnsNumbers;
-        this.ths = ths;
-        this.trs = Array();
-    }
-    getName () {
-        return this.name;
-    }
-    getColumnsNumbers () {
-        return this.columnsNumbers;
-    }
-    getThs () {
-        return this.ths;
-    }
-    getTrs () {
-        return this.trs;
-    }
 }
