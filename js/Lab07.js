@@ -85,23 +85,61 @@ function showCreateTable() {
     divCreateTable.appendChild(inputTableName);
     divCreateTable.appendChild(inputColumnsNumbers);
 
-    inputColumnsNumbers.onchange = function () {
+    inputTableName.onchange = function () {
         divAttribute.innerText = "";
-        if (inputColumnsNumbers.value > 0) {
+        if (inputColumnsNumbers.value > 0 && (document.getElementById("inputTableName").value !== "")) {
             showAttribute(inputColumnsNumbers.value);
             let commit = createCommit();
             commit.onclick = function () {
                 let name = document.getElementById("inputTableName").value;
                 let columnsNumbers = document.getElementById("inputColumnsNumbers").value;
-                let ths = Array();
+
+                let isValid = true;
                 for (let i = 1; i <= columnsNumbers; i++) {
-                    ths.push(document.getElementById("inputAttribute" + i).value);
+                    if (document.getElementById("inputAttribute" + i).value === "")
+                        isValid = false;
                 }
+                if (isValid) {
+                    let ths = Array();
+                    for (let i = 1; i <= columnsNumbers; i++) {
+                        ths.push(document.getElementById("inputAttribute" + i).value);
+                    }
 
-                let table = new Table(name,columnsNumbers,ths);
-                tables.push(table);
+                    let table = new Table(name,columnsNumbers,ths);
+                    tables.push(table);
 
-                createTable(table);
+                    createTable(table);
+                }
+            };
+            divAttribute.appendChild(commit);
+        }
+    }
+
+    inputColumnsNumbers.onchange = function () {
+        divAttribute.innerText = "";
+        if (inputColumnsNumbers.value > 0 && (document.getElementById("inputTableName").value !== "")) {
+            showAttribute(inputColumnsNumbers.value);
+            let commit = createCommit();
+            commit.onclick = function () {
+                let name = document.getElementById("inputTableName").value;
+                let columnsNumbers = document.getElementById("inputColumnsNumbers").value;
+
+                let isValid = true;
+                for (let i = 1; i <= columnsNumbers; i++) {
+                    if (document.getElementById("inputAttribute" + i).value === "")
+                        isValid = false;
+                }
+                if (isValid) {
+                    let ths = Array();
+                    for (let i = 1; i <= columnsNumbers; i++) {
+                        ths.push(document.getElementById("inputAttribute" + i).value);
+                    }
+
+                    let table = new Table(name,columnsNumbers,ths);
+                    tables.push(table);
+
+                    createTable(table);
+                }
             };
             divAttribute.appendChild(commit);
         }
@@ -175,13 +213,19 @@ function showAddRow() {
             }
             let commit = createCommit();
             commit.onclick = function () {
-                let row = Array();
+                let isValid = false;
                 for (let i = 1; i <= table.getColumnsNumbers(); i++) {
-                    row.push(document.getElementById("inputRowAttribute" + i).value);
+                    isValid = isValid || (document.getElementById("inputRowAttribute" + i).value !== "");
                 }
-                table.getTrs().push(row);
+                if (isValid) {
+                    let row = Array();
+                    for (let i = 1; i <= table.getColumnsNumbers(); i++) {
+                        row.push(document.getElementById("inputRowAttribute" + i).value);
+                    }
+                    table.getTrs().push(row);
 
-                drawTableTr(table,table.getTrs().length - 1);
+                    drawTableTr(table,table.getTrs().length - 1);
+                }
             };
             divAddRow.appendChild(commit);
         }

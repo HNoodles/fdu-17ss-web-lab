@@ -17,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Lab07.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Lab07.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Lab07.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
@@ -26,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lab07.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Lab07.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Lab07.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3228">
-              <caret line="211" column="74" selection-start-line="211" selection-start-column="74" selection-end-line="211" selection-end-column="74" />
+            <state relative-caret-position="558">
+              <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -215,11 +215,13 @@
       <workItem from="1526196416119" duration="6691000" />
       <workItem from="1526212839189" duration="35000" />
       <workItem from="1526214155056" duration="153000" />
+      <workItem from="1526286199123" duration="271000" />
+      <workItem from="1526291516433" duration="1639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125783000" />
+    <option name="totallyTimeSpent" value="127693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -599,17 +601,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Lab07.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3228">
-          <caret line="211" column="74" selection-start-line="211" selection-start-column="74" selection-end-line="211" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lab07.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Lab07.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
         </state>
       </provider>
     </entry>
