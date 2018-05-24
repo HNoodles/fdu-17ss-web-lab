@@ -35,10 +35,10 @@
   $continents = array("Asia","Africa","Europe","North America","South America", "Oceania");
 
   $countries = array();
+  $countries["CA"] = "Canada";
   $countries["DE"] = "Germany";
   $countries["GR"] = "Greece";
   $countries["IT"] = "Italy";
-  $countries["CA"] = "Canada";
   $countries["GB"] = "United Kingdom";
   $countries["US"] = "United States";
 

@@ -8,10 +8,8 @@ function generateLink($url, $label, $class) {
 }
 
 
-function outputPostRow($number)  {
+function outputPostRow($number) {
     include("travel-data.inc.php");
-
-
 
     echo "<div class=\"row\">
                         <div class=\"col-md-4\">",
