@@ -3,6 +3,23 @@
 
 //****** Hint ******
 //connect database and fetch data here
+define('DBHOST', 'localhost');
+define('DBNAME', 'travel');
+define('DBUSER', 'root');
+define('DBPASS', '');
+
+$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+if ( mysqli_connect_errno() ) {
+    die( mysqli_connect_error() );
+}
+
+$sqlContinents = 'select * from Continents order by ContinentCode';
+$sqlCountries = 'select * from Countries order by ISO';
+$sqlImageDetails = 'select * from ImageDetails order by ImageID';
+
+$resultContinents = mysqli_query($connection, $sqlContinents);
+$resultCountries = mysqli_query($connection, $sqlCountries);
+$resultImageDetails = mysqli_query($connection, $sqlImageDetails);
 
 
 ?>
@@ -14,7 +31,7 @@
     <meta charset="utf-8">
     <title>Chapter 14</title>
 
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -46,11 +63,11 @@
 
                 //****** Hint ******
                 //display the list of continents
-
-                while($row = $result->fetch_assoc()) {
-                  echo '<option value=' . $row['ContinentCode'] . '>' . $row['ContinentName'] . '</option>';
+                while($rowContinents = $resultContinents->fetch_assoc()) {
+                  echo '<option value=' . $rowContinents['ContinentCode'] . '>' . $rowContinents['ContinentName'] . '</option>';
                 }
 
+                mysqli_free_result($resultContinents);
                 ?>
               </select>     
               
@@ -60,11 +77,16 @@
                 //Fill this place
 
                 //****** Hint ******
-                /* display list of countries */ 
+                /* display list of countries */
+                while ($rowCountries = $resultCountries -> fetch_assoc()) {
+                    echo '<option value=' . $rowCountries['ISO'] . '>' . $rowCountries['CountryName'] . '</option>';
+                }
+
+                mysqli_free_result($resultCountries);
                 ?>
               </select>    
               <input type="text"  placeholder="Search title" class="form-control" name=title>
-              <button type="submit" class="btn btn-primary">Filter</button>
+              <button type="submit" name="filter" class="btn btn-primary">Filter</button>
               </div>
             </form>
 
@@ -77,19 +99,57 @@
             //Fill this place
 
             //****** Hint ******
-            /* use while loop to display images that meet requirements ... sample below ... replace ???? with field data
-            <li>
-              <a href="detail.php?id=????" class="img-responsive">
-                <img src="images/square-medium/????" alt="????">
+//            use while loop to display images that meet requirements ... sample below ... replace ???? with field data
+            function echoImage($row) {
+                echo '<li>
+              <a href="detail.php?id='.$row['ImageID'].'" class="img-responsive">
+                <img src="images/square-medium/'.$row['Path'].'" alt="'.$row['Title'].'">
                 <div class="caption">
                   <div class="blur"></div>
                   <div class="caption-text">
-                    <p>????</p>
+                    <p>'.$row['Title'].'</p>
                   </div>
                 </div>
               </a>
-            </li>        
-            */ 
+            </li>';
+            }
+
+            while ($rowImageDetails = $resultImageDetails -> fetch_assoc()){
+                if (isset($_GET['filter'])) {
+                    // filter button clicked
+                    $continent = $_GET['continent'];
+                    $country = $_GET['country'];
+                    if ($continent !== "0") {
+                        // continent set
+                        if ($country !== "0") {
+                            // continent set, country set
+                            if (($rowImageDetails['ContinentCode'] === $continent)
+                                && ($rowImageDetails['CountryCodeISO'] === $country)){
+                                echoImage($rowImageDetails);
+                            }
+
+                        } else {
+                            // continent set, country not set
+                            if ($rowImageDetails['ContinentCode'] === $continent)
+                                echoImage($rowImageDetails);
+                        }
+                    } else {
+                        // continent not set
+                        if ($country !== "0") {
+                            // continent not set, country set
+                            if (($rowImageDetails['CountryCodeISO'] === $country))
+                                echoImage($rowImageDetails);
+                        } else {
+                            // continent not set, country not set
+                            echoImage($rowImageDetails);
+                        }
+                    }
+                } else {
+                    // filter button not clicked
+                    echoImage($rowImageDetails);
+                }
+            }
+
             ?>
        </ul>       
 
