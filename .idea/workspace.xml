@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be0594c8-c6bc-4aa8-82e4-6e719a661aeb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab10.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lab10.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/travel-small.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/travel-small.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,7 +33,7 @@
       <file leaf-file-name="Lab10.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lab10.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
+            <state relative-caret-position="4170">
               <caret line="139" column="82" lean-forward="true" selection-start-line="139" selection-start-column="82" selection-end-line="139" selection-end-column="82" />
             </state>
           </provider>
@@ -273,7 +269,7 @@
       <workItem from="1527168007483" duration="114000" />
       <workItem from="1527692065861" duration="1240000" />
       <workItem from="1527761420403" duration="5821000" />
-      <workItem from="1528016096406" duration="16448000" />
+      <workItem from="1528016096406" duration="16540000" />
     </task>
     <task id="LOCAL-00001" summary="Lab08">
       <created>1526484807809</created>
@@ -296,11 +292,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527168093033</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lab10">
+      <created>1528040300094</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1528040300094</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172128000" />
+    <option name="totallyTimeSpent" value="172220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -337,7 +340,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lab08" />
     <MESSAGE value="Lab09" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lab09" />
+    <MESSAGE value="Lab10" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab10" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -663,7 +667,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lab10.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
+        <state relative-caret-position="4170">
           <caret line="139" column="82" lean-forward="true" selection-start-line="139" selection-start-column="82" selection-end-line="139" selection-end-column="82" />
         </state>
       </provider>
