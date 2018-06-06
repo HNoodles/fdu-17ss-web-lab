@@ -151,6 +151,7 @@ $resultImageDetails = mysqli_query($connection, $sqlImageDetails);
             }
 
             mysqli_free_result($resultImageDetails);
+            mysqli_close($connection);
             ?>
        </ul>       
 
