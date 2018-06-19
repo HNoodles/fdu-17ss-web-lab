@@ -72,8 +72,12 @@
     <p>请上传音乐文件</p>
 
     <!--TODO: 在这里补充 html 元素，使 file_upload 上传后若为音乐文件，则可以直接播放-->
+    <audio controls autoplay>
+
+    </audio>
 
     <input type="file" name="file_upload">
+
     <table>
         <tr><td>Title: <input type="text"></td><td>Artist: <input type="text"></td></tr>
         <tr><td colspan="2"><textarea name="edit_lyric" id="edit_lyric"></textarea></td></tr>
@@ -87,6 +91,7 @@
 <section id="s_show" class="content">
     <select>
     <!--TODO: 在这里补充 html 元素，使点开 #d_show 之后这里实时加载服务器中已有的歌名-->
+        <option class="tab"></option>
     
     </select>
 
